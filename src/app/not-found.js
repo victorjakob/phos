@@ -10,16 +10,15 @@ export default function NotFound() {
             404
           </h1>
         </div>
-
+        
         {/* Message */}
         <h2 className="text-2xl font-elegant text-[#F5F7FA] mb-4">
           Page Not Found
         </h2>
         <p className="text-[#D1D5DE] font-body mb-8">
-          The page you're looking for doesn't exist. It might have been moved or
-          deleted.
+          The page you&apos;re looking for doesn&apos;t exist. It might have been moved or deleted.
         </p>
-
+        
         {/* Navigation Options */}
         <div className="space-y-4">
           <Link
@@ -28,7 +27,7 @@ export default function NotFound() {
           >
             Go Home
           </Link>
-
+          
           <Link
             href="/contact"
             className="block w-full bg-transparent border border-[#F5C542]/30 text-[#F5C542] px-6 py-3 rounded-lg font-body font-medium hover:border-[#F5C542]/60 hover:text-[#F5C542]/90 transition-all duration-200"
@@ -36,27 +35,27 @@ export default function NotFound() {
             Contact Us
           </Link>
         </div>
-
+        
         {/* Helpful Links */}
         <div className="mt-8 pt-6 border-t border-[#F5C542]/20">
           <p className="text-sm text-[#B0B6C4] font-body mb-3">
             You might be looking for:
           </p>
           <div className="space-y-2">
-            <Link
-              href="/"
+            <Link 
+              href="/" 
               className="block text-[#F5C542] hover:text-[#F5C542]/80 transition-colors duration-200 text-sm"
             >
               Home - Learn about PHOS
             </Link>
-            <Link
-              href="/join"
+            <Link 
+              href="/join" 
               className="block text-[#F5C542] hover:text-[#F5C542]/80 transition-colors duration-200 text-sm"
             >
               Join the Movement
             </Link>
-            <Link
-              href="/contact"
+            <Link 
+              href="/contact" 
               className="block text-[#F5C542] hover:text-[#F5C542]/80 transition-colors duration-200 text-sm"
             >
               Contact Information

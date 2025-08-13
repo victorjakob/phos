@@ -2,10 +2,9 @@
 const nextConfig = {
   // Performance optimizations
   experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ["framer-motion"],
+    // Removed optimizeCss and optimizePackageImports as they cause build issues
   },
-
+  
   // Image optimization
   images: {
     formats: ["image/webp", "image/avif"],
@@ -13,10 +12,10 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
-
+  
   // Compression
   compress: true,
-
+  
   // Security headers
   async headers() {
     return [
@@ -60,7 +59,7 @@ const nextConfig = {
       },
     ];
   },
-
+  
   // Redirects for SEO
   async redirects() {
     return [
@@ -76,7 +75,7 @@ const nextConfig = {
       },
     ];
   },
-
+  
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle size
@@ -92,10 +91,10 @@ const nextConfig = {
         },
       };
     }
-
+    
     return config;
   },
-
+  
   // PWA support
   async rewrites() {
     return [
