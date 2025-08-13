@@ -1,0 +1,210 @@
+Design Vibe:
+Create a full-screen, modern, celestial-inspired landing page for PHOS, a global peace movement happening August 12, 2026.
+The style should be elegant, minimal, and immersive, with smooth fade/slide animations, large breathing space, and a color palette of deep midnight blue, eclipse gold, moon white, and starlight gray.
+Use Next.js 14 App Router + Tailwind CSS, mobile-first responsive design, and clean typography.
+Include subtle parallax background stars and a gentle logo animation of 3 circles aligning in golden ratio.
+Add language toggle (EN/IS) in top right, switching between content from two text files.
+Buttons and CTAs should be rounded, glowing softly on hover, with gold-to-white gradients.
+Overall mood: sacred, cosmic, unifying — like an invitation to a global ceremony.
+
+
+
+here is the contant:
+
+PHOS — Landing Page Copy
+Hero Section
+Headline:
+One Circle. One Light. One World.
+
+Subheadline:
+A global pause for peace — August 12, 2026.
+
+Intro Line:
+On this day, we gather in harmony with the cosmos, and let a new light rise for ourselves — and for Earth.
+
+Buttons:
+
+Join the Movement
+
+Learn More
+
+The Vision
+Header:
+A Moment to Realign Humanity
+
+Body:
+We live in a time of turning — an age calling for a great reset of the human spirit.
+PHOS is that moment.
+A day to look up from the noise, align with the solar system, and remember the greater picture we are part of.
+
+On August 12, 2026, we invite the world to pause.
+To breathe. To listen.
+To allow a wave of peace to move through every heart.
+
+What is PHOS?
+Header:
+Light. Music. Unity.
+
+3 Icon Blocks:
+
+A Global Concert for Peace
+Artists across every continent, playing together in one great heartbeat.
+
+Alignment with the Cosmos
+Timed with a solar eclipse — a symbol of harmony, stillness, and transformation.
+
+One Light, One Heartbeat
+A shared frequency that bridges borders, faiths, and cultures.
+
+Why Music? Why Together?
+Header:
+When Light Unites, It Becomes Unstoppable
+
+Body:
+When light moves in chaos, it scatters.
+When light moves in unity, it becomes a laser — focused, clear, and powerful.
+We are the same.
+When we gather as one, our impact multiplies.
+
+Music is a pure carrier of energy — unseen, yet capable of traveling at the speed of thought. On this day, the music of PHOS becomes a bridge to a higher frequency, magnifying our shared light.
+
+The Moment — August 12, 2026
+Header:
+Out of the Shadow, a Light for a New Time Will Rise
+
+Body:
+On this day, the moon will pass before the sun, and the Earth will pause in shadow.
+Sun, moon, and Earth in perfect alignment — a cosmic sign of balance, stillness, and renewal.
+It is the perfect threshold for a new beginning.
+
+Visual Element:
+Countdown timer to event.
+
+How to Be Part of PHOS
+Header:
+From Iceland, to the World
+
+Body:
+PHOS is in motion — a call to artists, leaders, and visionaries to unite.
+If this speaks to your heart, you are already part of the movement.
+
+Ways to Join:
+
+Tune In — Join the global audience on August 12, 2026.
+
+Collaborate — Artists, leaders, and changemakers: bring your voice, your light.
+
+Support — Help us build the stage for this moment in history.
+
+CTA:
+I’m In → Email sign-up form.
+
+Closing
+Centered Quote:
+"PHOS is not just an event — it’s a heartbeat."
+
+Subline:
+From the heart of Iceland, to the heart of the world.
+
+Final CTA:
+Join the Movement
+
+
+ICELANDIC: 
+PHOS — Vefsíðu texti á íslensku
+Forsíða / Hero Section
+Aðal fyrirsögn:
+Einn hringur. Eitt ljós. Einn heimur.
+
+Undirfyrirsögn:
+Alheims pása fyrir frið — 12. ágúst 2026.
+
+Kynningarlína:
+Á þessum degi stillum við okkur af við alheiminn og leyfum nýju ljósi að rísa — fyrir okkur sjálf og fyrir jörðina.
+
+Hnappar:
+
+Taktu þátt í hreyfingunni
+
+Lesa meira
+
+Sýn verkefnisins
+Fyrirsögn:
+Stund til að endurstilla mannkynið
+
+Texti:
+Við lifum á tímamótum — þar sem þörf er á djúpri endurstillingu mannsandans.
+PHOS er sú stund.
+Dagur til að líta upp úr amstrinu, samstilla okkur við sólkerfið og muna að við erum hluti af stærri heild.
+
+12. ágúst 2026 bjóðum við heiminum að staldra við.
+Að anda. Að hlusta.
+Að leyfa friðarbylgju að flæða í gegnum hvert hjarta.
+
+Hvað er PHOS?
+Fyrirsögn:
+Ljós. Tónlist. Samstaða.
+
+3 táknblokkir:
+
+Alþjóðlegir tónleikar fyrir frið
+Listafólk um allan heim spilar saman í einu hjartslætti.
+
+Samstilling við alheiminn
+Tímsett með sólmyrkva — tákn kyrrðar, jafnvægis og umbreytingar.
+
+Eitt ljós, einn hjartsláttur
+Sameiginleg tíðni sem tengir saman lönd, trú og menningu.
+
+Af hverju tónlist? Af hverju saman?
+Fyrirsögn:
+Þegar ljós sameinast verður það óstöðvandi
+
+Texti:
+Þegar ljós ferðast ósamstillt dreifist það.
+Þegar ljós ferðast í einingu verður það að leysigeisla — skýru, beinu og kraftmiklu ljósi.
+Við erum eins.
+Þegar við stöndum saman margfaldast áhrifin.
+
+Tónlist er tær orkuberi — ósýnileg en fær um að ferðast með hjarta og huga á hraða hugsunar. Þennan dag verður tónlist PHOS brú til hærri tíðni sem magnar ljós okkar.
+
+Stundin — 12. ágúst 2026
+Fyrirsögn:
+Úr skugganum mun ljós nýrra tíma rísa
+
+Texti:
+Á þessum degi gengur tunglið fyrir sólina og jörðin staldra við í skugga.
+Sól, tungl og jörð mætast í fullkominni línu — alheimstákn um jafnvægi, kyrrð og nýtt upphaf.
+Kjörin stund til að hefja nýjan tíma.
+
+Viðbótarefni:
+Niðurtalning til viðburðar.
+
+Hvernig getur þú verið með?
+Fyrirsögn:
+Frá Íslandi til heimsins
+
+Texti:
+PHOS er á ferð — ákall til listamanna, leiðtoga og framtíðarsýnismanna um að sameinast.
+Ef þetta talar til hjarta þíns, ertu þegar hluti af hreyfingunni.
+
+Leiðir til þátttöku:
+
+Stilltu þig inn — Vertu hluti af alþjóðlegu áhorfendahópnum 12. ágúst 2026.
+
+Samstarf — Listafólk, leiðtogar og umbreytendur: deilið rödd ykkar og ljósi.
+
+Stuðningur — Hjálpaðu okkur að reisa svið þessa augnabliks í sögunni.
+
+CTA:
+Ég er með → Skráningareyðublað.
+
+Lokaorð
+Miðju tilvitnun:
+"PHOS er ekki bara viðburður — það er hjartsláttur."
+
+Undirlína:
+Frá hjarta Íslands til hjarta heimsins.
+
+Loka CTA:
+Taktu þátt í hreyfingunni
