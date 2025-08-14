@@ -1,4 +1,5 @@
-import AnimatedSection from "../globals/AnimatedSection";
+"use client";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const content = {
@@ -46,21 +47,40 @@ export default function WhatIsPhosSection() {
   ];
 
   return (
-    <AnimatedSection className="py-24 px-6 relative z-10">
+    <section className="py-24 px-6 relative z-10">
       <div className="max-w-5xl mx-auto">
-        <h2
+        <motion.h2
           className="text-3xl md:text-4xl lg:text-5xl font-elegant mb-16 text-center text-[#F5F7FA]"
           style={{
             lineHeight: "1.1",
             fontWeight: "300",
           }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.1,
+          }}
         >
           {t.header}
-        </h2>
+        </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-12">
           {iconItems.map((item, index) => (
-            <div key={index} className="text-center group relative">
+            <motion.div
+              key={index}
+              className="text-center group relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+                delay: 0.3 + index * 0.2,
+              }}
+            >
               {/* Subtle background glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#F5C542]/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -85,10 +105,10 @@ export default function WhatIsPhosSection() {
                   {item.text}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

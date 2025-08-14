@@ -75,7 +75,7 @@ phos/
 │   │   └── globals.css        # Global styles and CSS variables
 │   ├── components/
 │   │   ├── AnimatedBackground.js    # Canvas-based star animation
-│   │   ├── AnimatedSection.js       # Scroll-triggered animations
+│   │   ├── (Individual element animations) # Each section has its own animations
 │   │   ├── Button.js                # Styled button components
 │   │   ├── CountdownTimer.js        # Event countdown
 │   │   ├── LanguageToggle.js        # EN/IS language switcher
@@ -131,7 +131,7 @@ Update CSS variables in `src/app/globals.css`:
 ### Adding New Sections
 
 1. Create the section in the main page component
-2. Wrap with `AnimatedSection` for scroll animations
+2. Add individual element animations with staggered timing
 3. Add content to both language files
 
 ## 📱 Responsive Breakpoints

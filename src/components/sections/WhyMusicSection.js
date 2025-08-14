@@ -1,4 +1,4 @@
-import AnimatedSection from "../globals/AnimatedSection";
+"use client";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import FlowerOfLife from "../globals/FlowerOfLife";
@@ -24,7 +24,7 @@ export default function WhyMusicSection() {
   const t = content[language];
 
   return (
-    <AnimatedSection className="py-23 lg:py-48 px-6 relative z-10 overflow-hidden bg-gradient-to-t from-transparent via-[#4ade80]/5 to-transparent">
+    <section className="py-23 lg:py-48 px-6 relative z-10 overflow-hidden bg-gradient-to-t from-transparent via-[#4ade80]/5 to-transparent">
       {/* Sacred Geometry - Flower of Life Background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Flower of Life Pattern - Animated and Subtly Illuminated */}
@@ -100,7 +100,7 @@ export default function WhyMusicSection() {
             scale: [1, 0.9, 1],
           }}
           transition={{
-            duration: 25,
+            duration: 15,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -116,7 +116,12 @@ export default function WhyMusicSection() {
           }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.1,
+          }}
         >
           {t.header}
         </motion.h2>
@@ -129,7 +134,12 @@ export default function WhyMusicSection() {
           }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.3,
+          }}
         >
           {t.body}
         </motion.p>
@@ -139,7 +149,12 @@ export default function WhyMusicSection() {
           className="relative group"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
         >
           {/* Animated background glow */}
           <motion.div
@@ -199,6 +214,6 @@ export default function WhyMusicSection() {
           />
         </motion.div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

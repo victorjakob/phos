@@ -1,7 +1,3 @@
-"use client";
-
-import Navbar from "@/components/globals/Navbar";
-import AnimatedBackground from "@/components/globals/AnimatedBackground";
 import HeroSection from "@/components/sections/HeroSection";
 import VisionSection from "@/components/sections/VisionSection";
 import WhatIsPhosSection from "@/components/sections/WhatIsPhosSection";
@@ -10,21 +6,13 @@ import TheMomentSection from "@/components/sections/TheMomentSection";
 import HowToJoinSection from "@/components/sections/HowToJoinSection";
 import ClosingSection from "@/components/sections/ClosingSection";
 
-import { motion } from "framer-motion";
-
 export default function Home() {
   return (
-    <motion.main
-      className="min-h-screen bg-[#0B0F1A] text-[#F5F7FA] relative overflow-x-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+    <main
+      className="min-h-screen text-[#F5F7FA] relative"
       role="main"
       aria-label="PHOS Global Peace Movement"
     >
-      <AnimatedBackground />
-      <Navbar />
-
       {/* Hero Section - Main landing area */}
       <section aria-labelledby="hero-heading">
         <HeroSection />
@@ -67,6 +55,6 @@ export default function Home() {
       >
         Skip to main content
       </a>
-    </motion.main>
+    </main>
   );
 }

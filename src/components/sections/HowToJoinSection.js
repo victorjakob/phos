@@ -1,7 +1,8 @@
-import AnimatedSection from "../globals/AnimatedSection";
+"use client";
 import Button from "../globals/Button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const content = {
   en: {
@@ -64,7 +65,7 @@ export default function HowToJoinSection() {
   ];
 
   return (
-    <AnimatedSection id="join" className="py-24 px-6 relative z-10">
+    <section id="join" className="py-24 px-6 relative z-10">
       <div className="max-w-5xl mx-auto text-center">
         <motion.h2
           className="text-3xl md:text-4xl lg:text-5xl font-elegant mb-8 text-[#F5F7FA]"
@@ -74,7 +75,12 @@ export default function HowToJoinSection() {
           }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.1,
+          }}
         >
           {t.header}
         </motion.h2>
@@ -87,7 +93,12 @@ export default function HowToJoinSection() {
           }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.3,
+          }}
         >
           {t.body}
         </motion.p>
@@ -96,7 +107,12 @@ export default function HowToJoinSection() {
           className="grid md:grid-cols-3 gap-8 mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
         >
           {joinItems.map((item, index) => (
             <motion.div
@@ -104,7 +120,12 @@ export default function HowToJoinSection() {
               className="group relative p-8 rounded-3xl bg-gradient-to-br from-[#F5F7FA]/5 via-[#F5C542]/3 to-[#F5F7FA]/5 backdrop-blur-sm border border-[#F5C542]/15 hover:border-[#F5C542]/30 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{
+                duration: 0.6,
+                ease: "easeInOut",
+                delay: 0.7 + index * 0.1,
+              }}
               whileHover={{
                 scale: 1.01,
                 y: -2,
@@ -139,11 +160,18 @@ export default function HowToJoinSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 1.0,
+          }}
         >
-          <Button>{t.cta}</Button>
+          <Link href="/join">
+            <Button>{t.cta}</Button>
+          </Link>
         </motion.div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

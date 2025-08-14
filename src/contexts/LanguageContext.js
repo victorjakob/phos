@@ -5,7 +5,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("is"); // Default to Icelandic
+  const [language, setLanguage] = useState("en"); // Default to English
 
   useEffect(() => {
     // Auto-detect language based on browser locale and location

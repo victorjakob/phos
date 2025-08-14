@@ -44,7 +44,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), "Source Sans Pro", Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
 }
 
 /* Refined Typography Classes */
@@ -96,31 +95,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Custom scrollbar - subtle and minimal */
-::-webkit-scrollbar {
-  width: 2px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(11, 15, 26, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(176, 182, 196, 0.5);
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(176, 182, 196, 0.8);
-}
-
-/* Firefox scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(176, 182, 196, 0.5) transparent;
 }
 
 /* Smooth scrolling */

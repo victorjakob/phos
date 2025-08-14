@@ -1,4 +1,5 @@
-import AnimatedSection from "../globals/AnimatedSection";
+"use client";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const content = {
@@ -17,28 +18,56 @@ export default function VisionSection() {
   const t = content[language];
 
   return (
-    <AnimatedSection id="vision" className="py-16 px-6 relative z-10">
+    <section id="vision" className="py-16 px-6 relative z-10">
       <div className="max-w-3xl mx-auto text-center">
-        <h2
+        <motion.h2
           className="text-3xl tracking-tight md:text-4xl lg:text-5xl font-elegant mb-6 text-[#F5F7FA]"
           style={{
             lineHeight: "1.1",
             fontWeight: "300",
           }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.1,
+          }}
         >
           {t.header}
-        </h2>
-        <div className="w-16 h-px bg-gradient-to-r from-transparent via-[#F5C542] to-transparent mx-auto mb-8 opacity-60" />
-        <p
+        </motion.h2>
+
+        <motion.div
+          className="w-16 h-px bg-gradient-to-r from-transparent via-[#F5C542] to-transparent mx-auto mb-8 opacity-60"
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 0.6, scaleX: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
+            delay: 0.3,
+          }}
+        />
+
+        <motion.p
           className="text-base md:text-lg font-body text-[#d1d5de] max-w-2xl mx-auto"
           style={{
             lineHeight: "1.6",
             fontWeight: "300",
           }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
         >
           {t.body}
-        </p>
+        </motion.p>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

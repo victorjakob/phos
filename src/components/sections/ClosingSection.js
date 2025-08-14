@@ -1,4 +1,5 @@
-import AnimatedSection from "../globals/AnimatedSection";
+"use client";
+import { motion } from "framer-motion";
 import Button from "../globals/Button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -20,16 +21,49 @@ export default function ClosingSection() {
   const t = content[language];
 
   return (
-    <AnimatedSection className="py-20 px-4 relative z-10 ">
+    <section className="py-20 px-4 relative z-10">
       <div className="max-w-4xl mx-auto text-center">
-        <blockquote className="text-3xl md:text-4xl font-elegant italic mb-6 text-[#F5F7FA]">
+        <motion.blockquote
+          className="text-3xl md:text-4xl font-elegant italic mb-6 text-[#F5F7FA]"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.1,
+          }}
+        >
           &ldquo;{t.quote}&rdquo;
-        </blockquote>
-        <p className="text-lg md:text-xl font-body text-[#B0B6C4] mb-8">
+        </motion.blockquote>
+
+        <motion.p
+          className="text-lg md:text-xl font-body text-[#B0B6C4] mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.3,
+          }}
+        >
           {t.subline}
-        </p>
-        <Button>{t.finalCta}</Button>
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+        >
+          <Button>{t.finalCta}</Button>
+        </motion.div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

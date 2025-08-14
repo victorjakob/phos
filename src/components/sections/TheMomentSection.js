@@ -1,4 +1,5 @@
-import AnimatedSection from "../globals/AnimatedSection";
+"use client";
+import { motion } from "framer-motion";
 import CountdownTimer from "./CountdownTimer";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -18,16 +19,49 @@ export default function TheMomentSection() {
   const t = content[language];
 
   return (
-    <AnimatedSection className="py-20 px-4 relative z-10 ">
+    <section className="py-20 px-4 relative z-10">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-elegant mb-8 text-[#F5F7FA]">
+        <motion.h2
+          className="text-4xl md:text-5xl font-elegant mb-8 text-[#F5F7FA]"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.1,
+          }}
+        >
           {t.header}
-        </h2>
-        <p className="text-lg md:text-xl font-body text-[#B0B6C4] mb-12 max-w-3xl mx-auto">
+        </motion.h2>
+
+        <motion.p
+          className="text-lg md:text-xl font-body text-[#B0B6C4] mb-12 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.3,
+          }}
+        >
           {t.body}
-        </p>
-        <CountdownTimer />
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+        >
+          <CountdownTimer />
+        </motion.div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

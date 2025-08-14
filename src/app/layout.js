@@ -3,6 +3,8 @@ import { Playfair_Display } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Footer from "@/components/globals/Footer";
 import "./globals.css";
+import Navbar from "@/components/globals/Navbar";
+import AnimatedBackground from "@/components/globals/AnimatedBackground";
 
 const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
@@ -147,9 +149,6 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
 
-        {/* DNS prefetch for performance */}
-        <link rel="dns-prefetch" href="//phos.is" />
-
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -226,30 +225,13 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
-
-        {/* Service Worker Registration */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                      console.log('SW registered: ', registration);
-                    })
-                    .catch(function(registrationError) {
-                      console.log('SW registration failed: ', registrationError);
-                    });
-                });
-              }
-            `,
-          }}
-        />
       </head>
       <body
         className={`${sourceSans.variable} ${playfairDisplay.variable} antialiased`}
       >
         <LanguageProvider>
+          <AnimatedBackground />
+          <Navbar />
           {children}
           <Footer />
         </LanguageProvider>
