@@ -16,7 +16,7 @@ export function LanguageProvider({ children }) {
         browserLocale.startsWith("is") || browserLocale.startsWith("is-IS");
 
       if (isIcelandicLocale) {
-        setLanguage("is");
+        setLanguage("");
         return;
       }
 

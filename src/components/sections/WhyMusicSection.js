@@ -24,7 +24,7 @@ export default function WhyMusicSection() {
   const t = content[language];
 
   return (
-    <section className="py-23 lg:py-48 px-6 relative z-10 overflow-hidden bg-gradient-to-t from-transparent via-[#4ade80]/5 to-transparent">
+    <section className="min-h-screen flex items-center justify-center px-6 relative z-10 overflow-hidden bg-gradient-to-t from-transparent via-[#4ade80]/5 to-transparent">
       {/* Sacred Geometry - Flower of Life Background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Flower of Life Pattern - Animated and Subtly Illuminated */}

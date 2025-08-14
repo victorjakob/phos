@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 const content = {
   en: {
@@ -34,15 +35,18 @@ export default function WhatIsPhosSection() {
   const iconItems = [
     {
       text: t.iconBlocks.concert,
-      icon: "🎵",
+      icon: "/icons/note.jpeg",
+      type: "image",
     },
     {
       text: t.iconBlocks.alignment,
-      icon: "🌑",
+      icon: "/icons/eclipse.jpeg",
+      type: "image",
     },
     {
       text: t.iconBlocks.light,
-      icon: "✨",
+      icon: "/icons/love.jpeg",
+      type: "image",
     },
   ];
 
@@ -50,7 +54,7 @@ export default function WhatIsPhosSection() {
     <section className="py-24 px-6 relative z-10">
       <div className="max-w-5xl mx-auto">
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-elegant mb-16 text-center text-[#F5F7FA]"
+          className="text-3xl md:text-4xl lg:text-5xl font-elegant mb-24 text-center text-[#F5F7FA]"
           style={{
             lineHeight: "1.1",
             fontWeight: "300",
@@ -86,11 +90,21 @@ export default function WhatIsPhosSection() {
 
               {/* Icon container */}
               <div className="relative mb-8">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#F5C542] to-[#F5F7FA] rounded-full mx-auto flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                  <span className="text-3xl">{item.icon}</span>
+                <div className="w-24 h-24 bg-gradient-to-br from-[#F5C542]/10 to-[#F5F7FA]/5 rounded-full mx-auto flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 overflow-hidden border border-[#F5C542]/20">
+                  {item.type === "image" ? (
+                    <Image
+                      src={item.icon}
+                      alt="Icon"
+                      width={64}
+                      height={64}
+                      className="object-cover rounded-full"
+                    />
+                  ) : (
+                    <span className="text-4xl">{item.icon}</span>
+                  )}
                 </div>
                 {/* Subtle glow effect */}
-                <div className="absolute inset-0 w-20 h-20 bg-gradient-to-br from-[#F5C542]/20 to-transparent rounded-full mx-auto blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 w-24 h-24 bg-gradient-to-br from-[#F5C542]/10 to-transparent rounded-full mx-auto blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Content */}

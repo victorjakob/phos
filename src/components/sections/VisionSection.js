@@ -18,7 +18,10 @@ export default function VisionSection() {
   const t = content[language];
 
   return (
-    <section id="vision" className="py-16 px-6 relative z-10">
+    <section
+      id="vision"
+      className="relative z-10 min-h-screen flex items-center justify-center"
+    >
       <div className="max-w-3xl mx-auto text-center">
         <motion.h2
           className="text-3xl tracking-tight md:text-4xl lg:text-5xl font-elegant mb-6 text-[#F5F7FA]"
