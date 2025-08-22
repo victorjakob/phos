@@ -1,5 +1,5 @@
 "use client";
-import Button from "../globals/Button";
+import Button from "../../../components/globals/Button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -22,7 +22,7 @@ const content = {
         desc: "Help us build the movement and the stage for this moment",
       },
     },
-    cta: "I'm In",
+    cta: "I'm All In",
   },
   is: {
     header: "Hvernig á að vera hluti af PHOS",
@@ -41,7 +41,7 @@ const content = {
         desc: "Hjálpaðu okkur að byggja hreyfinguna og sviðið fyrir þessa stund",
       },
     },
-    cta: "Ég er með",
+    cta: "Ég er allur inn",
   },
 };
 
@@ -114,47 +114,58 @@ export default function HowToJoinSection() {
             delay: 0.5,
           }}
         >
-          {joinItems.map((item, index) => (
-            <motion.div
-              key={index}
-              className="group relative p-8 rounded-3xl bg-gradient-to-br from-[#F5F7FA]/5 via-[#F5C542]/3 to-[#F5F7FA]/5 backdrop-blur-sm border border-[#F5C542]/15 hover:border-[#F5C542]/30 transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{
-                duration: 0.6,
-                ease: "easeInOut",
-                delay: 0.7 + index * 0.1,
-              }}
-              whileHover={{
-                scale: 1.01,
-                y: -2,
-                transition: { duration: 0.15, ease: "easeOut" },
-              }}
-            >
-              {/* Subtle background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#F5C542]/5 via-transparent to-[#F5C542]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-
-              {/* Content container */}
-              <div className="relative">
-                <h3 className="text-xl md:text-2xl font-elegant text-[#F5C542] font-medium tracking-wide mb-4">
-                  {item.title}
-                </h3>
-                <p
-                  className="text-[#B0B6C4] font-body leading-relaxed"
-                  style={{
-                    lineHeight: "1.6",
-                    fontWeight: "300",
+          {joinItems.map((item, index) => {
+            let link = "/join"; // default
+            if (item.title === t.waysToJoin.tuneIn.title) {
+              link = "/tune-in";
+            } else if (item.title === t.waysToJoin.collaborate.title) {
+              link = "/collaborate";
+            } else if (item.title === t.waysToJoin.support.title) {
+              link = "/support";
+            }
+            return (
+              <Link href={link} key={index}>
+                <motion.div
+                  className="group relative p-8 rounded-3xl bg-gradient-to-br from-[#F5F7FA]/5 via-[#F5C542]/3 to-[#F5F7FA]/5 backdrop-blur-sm border border-[#F5C542]/15 hover:border-[#F5C542]/30 transition-all duration-300 cursor-pointer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut",
+                    delay: 0.7 + index * 0.1,
+                  }}
+                  whileHover={{
+                    scale: 1.01,
+                    y: -2,
+                    transition: { duration: 0.15, ease: "easeOut" },
                   }}
                 >
-                  {item.desc}
-                </p>
-              </div>
+                  {/* Subtle background glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#F5C542]/5 via-transparent to-[#F5C542]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
-              {/* Subtle corner accent */}
-              <div className="absolute top-3 right-3 w-2 h-2 bg-[#F5C542]/30 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-150" />
-            </motion.div>
-          ))}
+                  {/* Content container */}
+                  <div className="relative">
+                    <h3 className="text-xl md:text-2xl font-elegant text-[#F5C542] font-medium tracking-wide mb-4">
+                      {item.title}
+                    </h3>
+                    <p
+                      className="text-[#B0B6C4] font-body leading-relaxed"
+                      style={{
+                        lineHeight: "1.6",
+                        fontWeight: "300",
+                      }}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Subtle corner accent */}
+                  <div className="absolute top-3 right-3 w-2 h-2 bg-[#F5C542]/30 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-150" />
+                </motion.div>
+              </Link>
+            );
+          })}
         </motion.div>
 
         <motion.div
@@ -168,7 +179,32 @@ export default function HowToJoinSection() {
           }}
         >
           <Link href="/join">
-            <Button>{t.cta}</Button>
+            <motion.div
+              className="group relative p-8 rounded-3xl bg-gradient-to-br from-[#F5F7FA]/5 via-[#F5C542]/3 to-[#F5F7FA]/5 backdrop-blur-sm border border-[#F5C542]/15 hover:border-[#F5C542]/30 transition-all duration-300 cursor-pointer max-w-2xl mx-auto"
+              whileHover={{
+                scale: 1.01,
+                y: -2,
+                transition: { duration: 0.15, ease: "easeOut" },
+              }}
+            >
+              {/* Subtle background glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#F5C542]/5 via-transparent to-[#F5C542]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+
+              {/* Content container */}
+              <div className="relative text-center">
+                <h3 className="text-2xl md:text-3xl font-elegant text-[#F5C542] font-medium tracking-wide mb-4">
+                  {t.cta}
+                </h3>
+                <p className="text-[#B0B6C4] font-body leading-relaxed text-lg">
+                  {language === "en"
+                    ? "Join PHOS with full commitment and involvement"
+                    : "Vertu með í PHOS með fullri skuldbindingu og þátttöku"}
+                </p>
+              </div>
+
+              {/* Subtle corner accent */}
+              <div className="absolute top-3 right-3 w-2 h-2 bg-[#F5C542]/30 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-150" />
+            </motion.div>
           </Link>
         </motion.div>
       </div>

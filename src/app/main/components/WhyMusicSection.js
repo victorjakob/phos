@@ -1,12 +1,11 @@
 "use client";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
-import FlowerOfLife from "../globals/FlowerOfLife";
 
 const content = {
   en: {
     header: "United, we are stronger.",
-    body: "When photons travel out of phase, they scatter—like dim, blurred illumination. But when they come together, in phase, a laser is formed: light that is coherent, directed, purer and more powerful than ordinary light.",
+    body: "We are like photons. Alone and out of sync, our light scatters and fades. But when we align, our energy becomes focused.. clearer, stronger & powerful enough to change the world.",
     emphasis:
       "Harmony unites our light, which can cut through the shadows of the world.",
   },
@@ -25,9 +24,9 @@ export default function WhyMusicSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 relative z-10 overflow-hidden bg-gradient-to-t from-transparent via-[#4ade80]/5 to-transparent">
-      {/* Sacred Geometry - Flower of Life Background */}
+      {/* Sacred Geometry - Simple Circle Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Flower of Life Pattern - Animated and Subtly Illuminated */}
+        {/* Simple Circle Background - Animated and Subtly Illuminated */}
         <motion.div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           animate={{
@@ -43,15 +42,8 @@ export default function WhyMusicSection() {
           {/* Very subtle illumination glow effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#F5C542]/2 via-[#F5C542]/3 to-[#F5C542]/2 rounded-full blur-xl scale-110" />
 
-          {/* Main Flower of Life - Responsive sizing */}
-          <FlowerOfLife
-            layers={2}
-            radius={80}
-            stroke="#F5C542"
-            strokeWidth={1.5}
-            opacity={0.15}
-            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] relative z-10"
-          />
+          {/* Simple Circle - Responsive sizing */}
+          <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] border border-[#F5C542]/15 rounded-full relative z-10" />
 
           {/* Minimal inner glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#F5C542]/1 via-transparent to-[#F5C542]/1 rounded-full blur-md scale-102" />
@@ -80,19 +72,6 @@ export default function WhyMusicSection() {
         ))}
 
         {/* Subtle geometric shapes */}
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-32 h-32 border border-[#F5C542]/10 rounded-full"
-          animate={{
-            rotate: 360,
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-
         <motion.div
           className="absolute bottom-1/4 left-1/4 w-24 h-24 border border-[#F5C542]/5 rounded-full"
           animate={{
@@ -156,26 +135,13 @@ export default function WhyMusicSection() {
             delay: 0.5,
           }}
         >
-          {/* Animated background glow */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-[#F5C542]/10 via-[#F5F7FA]/5 to-[#F5C542]/10 rounded-3xl"
-            animate={{
-              opacity: [0, 0.3, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
           {/* Content container */}
-          <div className="relative p-8 rounded-3xl border border-[#F5C542]/20 group-hover:border-[#F5C542]/40 transition-all duration-300">
+          <div className="relative p-8 rounded-3xl group-hover:border-[#F5C542]/40 transition-all duration-300">
             <motion.p
-              className="text-lg md:text-xl font-elegant text-[#F5F7FA] leading-relaxed"
+              className="text-lg md:text-xl font-elegant text-[#F5C542] leading-relaxed"
               style={{
                 lineHeight: "1.5",
-                fontWeight: "400",
+                fontWeight: "100",
               }}
               whileHover={{
                 scale: 1.02,

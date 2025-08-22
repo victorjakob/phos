@@ -1,0 +1,10 @@
+{
+    "instructions": [
+      "Always use Framer Motion for animations (no other animation libraries).",
+      "Page transitions must be smooth and immersive, with subtle motion effects that feel alive and engaging.",
+      "Use TailwindCSS for all styling (no inline styles, no CSS files).",
+      "Write React components as functional components with hooks (not class components).",
+      "Organize code into /components, /hooks, /lib folders with clear separation of concerns."
+    ]
+  }
+  

@@ -1,45 +1,11 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("en"); // Default to English
-
-  useEffect(() => {
-    // Auto-detect language based on browser locale and location
-    const detectLanguage = async () => {
-      // Check browser locale first
-      const browserLocale = navigator.language || navigator.userLanguage;
-      const isIcelandicLocale =
-        browserLocale.startsWith("is") || browserLocale.startsWith("is-IS");
-
-      if (isIcelandicLocale) {
-        setLanguage("");
-        return;
-      }
-
-      // If not Icelandic locale, try to detect location
-      try {
-        // Use a free IP geolocation service
-        const response = await fetch("https://ipapi.co/json/");
-        const data = await response.json();
-
-        if (data.country_code === "IS") {
-          setLanguage("is");
-        } else {
-          setLanguage("en");
-        }
-      } catch (error) {
-        // If geolocation fails, fall back to English
-        console.log("Could not detect location, defaulting to English");
-        setLanguage("en");
-      }
-    };
-
-    detectLanguage();
-  }, []);
+  const [language, setLanguage] = useState("en"); // Always start with English
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "is" : "en"));

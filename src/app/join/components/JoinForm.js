@@ -17,7 +17,6 @@ const content = {
       country: "Country",
       role: "I am a...",
       interests: "Areas of Interest",
-      message: "Why do you want to join PHOS?",
       submit: "Join PHOS",
       submitting: "Joining...",
     },
@@ -60,7 +59,6 @@ const content = {
       country: "Land",
       role: "Ég er...",
       interests: "Áhugasvið",
-      message: "Af hverju viltu vera með í PHOS?",
       submit: "Vertu með í PHOS",
       submitting: "Tekur þátt...",
     },
@@ -102,7 +100,6 @@ export default function JoinForm() {
     country: "",
     role: "",
     interests: [],
-    message: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -131,21 +128,15 @@ export default function JoinForm() {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = t.errors.name;
+      newErrors.name = t.errors.required;
     }
 
     if (!formData.email.trim()) {
       newErrors.email = t.errors.required;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    }
+
+    if (!formData.email.includes("@")) {
       newErrors.email = t.errors.email;
-    }
-
-    if (!formData.country.trim()) {
-      newErrors.country = t.errors.required;
-    }
-
-    if (!formData.role) {
-      newErrors.role = t.errors.required;
     }
 
     setErrors(newErrors);
@@ -340,15 +331,13 @@ export default function JoinForm() {
                 htmlFor="role"
                 className="block text-sm font-medium text-[#F5C542] mb-2"
               >
-                {t.form.role} *
+                {t.form.role} (optional)
               </label>
               <select
                 id="role"
                 value={formData.role}
                 onChange={(e) => handleInputChange("role", e.target.value)}
-                className={`w-full px-4 py-3 bg-[#F5F7FA]/5 border rounded-lg font-body text-[#F5F7FA] focus:outline-none focus:ring-2 focus:ring-[#F5C542]/50 transition-all duration-300 ${
-                  errors.role ? "border-red-500" : "border-[#F5C542]/20"
-                }`}
+                className="w-full px-4 py-3 bg-[#F5F7FA]/5 border rounded-lg font-body text-[#F5F7FA] focus:outline-none focus:ring-2 focus:ring-[#F5C542]/50 transition-all duration-300 border-[#F5C542]/20"
               >
                 <option value="">{t.form.role}</option>
                 {t.roles.map((role) => (
@@ -361,9 +350,6 @@ export default function JoinForm() {
                   </option>
                 ))}
               </select>
-              {errors.role && (
-                <p className="mt-1 text-sm text-red-400">{errors.role}</p>
-              )}
             </div>
 
             {/* Interests */}

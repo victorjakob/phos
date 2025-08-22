@@ -1,5 +1,6 @@
 "use client";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 const content = {
@@ -37,7 +38,13 @@ const content = {
 
 export default function Footer() {
   const { language } = useLanguage();
+  const pathname = usePathname();
   const t = content[language];
+
+  // Hide footer on home page (/)
+  if (pathname === "/") {
+    return null;
+  }
 
   return (
     <footer className="py-20 px-6 text-center text-[#B0B6C4] relative z-10 bg-gradient-to-t from-[#0B0F1A] via-[#0B0F1A]/95 to-transparent">
