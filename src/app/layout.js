@@ -90,18 +90,18 @@ export const metadata = {
       "One Circle. One Light. One World. Join the global pause for peace on August 12, 2026. A moment to realign humanity with the cosmos.",
     images: [
       {
-        url: "/phos-logo.png",
+        url: "https://res.cloudinary.com/dy8q4hf0k/image/upload/v1756133844/phos-fb_lyxanj.jpg",
         width: 1200,
         height: 630,
         alt: "PHOS - Global Peace Movement Logo",
-        type: "image/png",
+        type: "image/jpeg",
       },
       {
-        url: "/phos-logo.png",
+        url: "https://res.cloudinary.com/dy8q4hf0k/image/upload/v1756133844/phos-fb_lyxanj.jpg",
         width: 800,
         height: 600,
         alt: "PHOS - Global Peace Movement Logo",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
@@ -112,7 +112,9 @@ export const metadata = {
     title: "PHOS - A Global Peace Movement | August 12, 2026",
     description:
       "One Circle. One Light. One World. Join the global pause for peace on August 12, 2026.",
-    images: ["/phos-logo.png"],
+    images: [
+      "https://res.cloudinary.com/dy8q4hf0k/image/upload/v1756133844/phos-fb_lyxanj.jpg",
+    ],
   },
   other: {
     "theme-color": "#0B0F1A",
@@ -140,6 +142,16 @@ export default function RootLayout({ children }) {
         />
         <meta name="theme-color" content="#0B0F1A" />
         <meta name="color-scheme" content="dark" />
+
+        {/* Additional Facebook-specific meta tags */}
+        <meta property="fb:app_id" content="" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta
+          property="og:image:alt"
+          content="PHOS - Global Peace Movement Logo"
+        />
 
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
