@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
@@ -175,9 +175,15 @@ export default function JoinForm() {
     }
   };
 
+  useEffect(() => {
+    if (isSubmitted) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [isSubmitted]);
+
   if (isSubmitted) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-6">
+      <div className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-[#F5C542] to-[#F5C542]/60 rounded-full flex items-center justify-center"
@@ -210,7 +216,7 @@ export default function JoinForm() {
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl font-body text-[#D1D5DE] leading-relaxed"
+            className="text-lg md:text-xl font-body text-[#D1D5DE] leading-relaxed mb-8"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -219,7 +225,7 @@ export default function JoinForm() {
           </motion.p>
 
           <motion.div
-            className="mt-12"
+            className="mt-8"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}

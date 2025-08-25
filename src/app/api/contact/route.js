@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { phosDb } from "@/lib/supabase/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,6 +15,24 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    // Save to Supabase first using the utility
+    const { data: dbData, error: dbError } = await phosDb.createFormSubmission({
+      name: formData.name,
+      email: formData.email,
+      form_type: formType,
+      form_data: formData,
+    });
+
+    if (dbError) {
+      console.error("Supabase error:", dbError);
+      return Response.json(
+        { error: "Failed to save submission" },
+        { status: 500 }
+      );
+    }
+
+    console.log("Saved to Supabase:", dbData);
 
     // Email templates for different form types
     const emailTemplates = {
@@ -85,7 +104,7 @@ export async function POST(request) {
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "PHOS Website <phos@phos.is>",
-      to: ["viggijakob@gmail.com"],
+      to: ["phos@phos.is"],
       subject: template.subject,
       html: template.html,
       replyTo: formData.email,
