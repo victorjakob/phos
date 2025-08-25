@@ -151,12 +151,22 @@ export default function JoinForm() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "join",
+          ...formData,
+        }),
+      });
 
-      // Here you would typically send data to your backend
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
       console.log("Form submitted:", formData);
-
       setIsSubmitted(true);
     } catch (error) {
       console.error("Submission error:", error);

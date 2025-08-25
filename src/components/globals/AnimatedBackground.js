@@ -62,6 +62,17 @@ export default function AnimatedBackground() {
     }
 
     const animate = () => {
+      // Safety check: ensure canvas dimensions are valid
+      if (
+        !canvas.width ||
+        !canvas.height ||
+        canvas.width <= 0 ||
+        canvas.height <= 0
+      ) {
+        animationId = requestAnimationFrame(animate);
+        return;
+      }
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Smooth scroll progress interpolation
@@ -71,6 +82,11 @@ export default function AnimatedBackground() {
       const circleSize = 0.5 + scrollProgress * 0.5; // Start at 50% (original size), grow to 100%
       const circleX = canvas.width / 2 + scrollProgress * canvas.width * 0.02; // Start centered, move very minimally right
       const circleY = canvas.height / 2 + scrollProgress * canvas.height * 0.1; // Start centered, move slightly down
+
+      // Validate circle coordinates to prevent NaN/Infinity errors
+      const validCircleX = isFinite(circleX) ? circleX : canvas.width / 2;
+      const validCircleY = isFinite(circleY) ? circleY : canvas.height / 2;
+      const validCircleSize = isFinite(circleSize) ? circleSize : 0.5;
 
       // Dynamic colors based on scroll - more subtle with red tint
       const centerColor = `hsl(${220 + scrollProgress * 25}, ${
@@ -82,12 +98,12 @@ export default function AnimatedBackground() {
 
       // Create dynamic gradient background
       const gradient = ctx.createRadialGradient(
-        circleX,
-        circleY,
+        validCircleX,
+        validCircleY,
         0,
-        circleX,
-        circleY,
-        Math.max(canvas.width, canvas.height) * circleSize
+        validCircleX,
+        validCircleY,
+        Math.max(canvas.width, canvas.height) * validCircleSize
       );
       gradient.addColorStop(0, centerColor);
       gradient.addColorStop(0.4, centerColor);

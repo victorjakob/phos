@@ -127,7 +127,21 @@ export default function CollaborateForm() {
 
   const onSubmit = async (data) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "collaborate",
+          ...data,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
       console.log("Collaboration form submitted:", data);
       setIsSubmitted(true);
       reset();
@@ -307,14 +321,11 @@ export default function CollaborateForm() {
               htmlFor="collaborationType"
               className="block text-sm font-medium text-[#F5C542] mb-2"
             >
-              {t.form.collaborationType}
+              {t.form.collaborationType} (optional)
             </label>
             <select
-              {...register("collaborationType", {
-                required: t.errors.required,
-              })}
+              {...register("collaborationType")}
               id="collaborationType"
-              required
               className="w-full px-4 py-3 bg-[#F5F7FA]/5 border border-[#F5C542]/20 rounded-lg text-[#F5F7FA] focus:outline-none focus:border-[#F5C542]/40 focus:ring-1 focus:ring-[#F5C542]/20 transition-all duration-200"
             >
               <option value="">{t.form.collaborationType}</option>
@@ -328,11 +339,6 @@ export default function CollaborateForm() {
                 </option>
               ))}
             </select>
-            {errors.collaborationType && (
-              <p className="mt-1 text-sm text-red-400">
-                {errors.collaborationType.message}
-              </p>
-            )}
           </div>
 
           <div>
