@@ -1,23 +1,14 @@
-import { Source_Sans_3 } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
+import { Encode_Sans } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Footer from "@/components/globals/Footer";
 import "./globals.css";
 import Navbar from "@/components/globals/Navbar";
 import AnimatedBackground from "@/components/globals/AnimatedBackground";
 
-const sourceSans = Source_Sans_3({
-  variable: "--font-source-sans",
+const encodeSans = Encode_Sans({
+  variable: "--font-encode-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   preload: true,
 });
@@ -238,9 +229,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body
-        className={`${sourceSans.variable} ${playfairDisplay.variable} antialiased`}
-      >
+      <body className={`${encodeSans.variable} antialiased`}>
         <LanguageProvider>
           <AnimatedBackground />
           <Navbar />

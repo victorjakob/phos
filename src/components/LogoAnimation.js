@@ -39,7 +39,7 @@ export default function LogoAnimation() {
 
       {/* PHOS Text - Centerpiece */}
       <motion.h1
-        className="text-5xl md:text-6xl lg:text-7xl font-display text-[#F5F7FA] text-center mb-6"
+        className="text-5xl md:text-6xl lg:text-7xl font-phos text-[#F5F7FA] text-center mb-6"
         initial={{ opacity: 0, y: 50, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{
@@ -48,7 +48,7 @@ export default function LogoAnimation() {
           ease: "easeOut",
         }}
       >
-        PHoS
+        PHOS
       </motion.h1>
 
       {/* Additional Text Elements - Smaller and below */}

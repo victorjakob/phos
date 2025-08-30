@@ -172,7 +172,7 @@ export default function HeroSection() {
 
       {/* PHOS Text - Centerpiece */}
       <motion.h1
-        className="text-5xl md:text-4xl lg:text-5xl font-display text-[#F5F7FA] text-center mb-6 z-30 relative"
+        className="text-5xl md:text-4xl lg:text-5xl font-phos text-[#F5F7FA] text-center mb-6 z-30 relative"
         initial={{ opacity: 0, y: 50, scale: 0.8 }}
         animate={{
           opacity: isExiting ? 0 : 1,

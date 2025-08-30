@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Biome Font - Only for PHOS text */
+@font-face {
+  font-family: "Biome";
+  src: url("/fonts/biome-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
 :root {
   --background: #0B0F1A;
   --foreground: #F5F7FA;
@@ -31,24 +39,37 @@
   --leading-normal: 1.5;
   --leading-relaxed: 1.625;
   --leading-loose: 2;
+  
+  /* Fonts */
+  --font-biome: "Biome", sans-serif;
+  --font-encode: var(--font-encode-sans), sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-source-sans);
-  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-encode);
+  --font-serif: var(--font-encode);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: var(--font-encode), Arial, Helvetica, sans-serif;
 }
 
-/* Refined Typography Classes */
+/* PHOS-specific font class - Only for the PHOS text */
+.font-phos {
+  font-family: var(--font-biome), sans-serif;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Refined Typography Classes - All using Encode Sans */
 .font-serif {
-  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-family: var(--font-encode), sans-serif;
   font-weight: 400;
   letter-spacing: var(--tracking-wide);
   line-height: var(--leading-relaxed);
@@ -58,7 +79,7 @@ body {
 }
 
 .font-elegant {
-  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-family: var(--font-encode), sans-serif;
   font-weight: 400;
   letter-spacing: var(--tracking-wide);
   line-height: var(--leading-loose);
@@ -68,7 +89,7 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-family: var(--font-encode), sans-serif;
   font-weight: 400;
   letter-spacing: var(--tracking-widest);
   line-height: var(--leading-tight);
@@ -78,7 +99,7 @@ body {
 }
 
 .font-body {
-  font-family: var(--font-sans), "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: var(--font-encode), sans-serif;
   font-weight: var(--font-weight-normal);
   letter-spacing: var(--tracking-normal);
   line-height: var(--leading-relaxed);
@@ -88,7 +109,7 @@ body {
 }
 
 .font-caption {
-  font-family: var(--font-sans), "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-family: var(--font-encode), sans-serif;
   font-weight: var(--font-weight-medium);
   letter-spacing: var(--tracking-wide);
   line-height: var(--leading-normal);
