@@ -11,7 +11,7 @@ const content = {
   en: {
     tagline: "— A Global Pause for Peace —",
     mantra: "One Circle. One Light. One World.",
-    globalPause: "Global Pause for Peace",
+    globalPause: "A Global Pause for Peace",
     date: "August 12, 2026",
     location: "Viðey",
     cta1: "Join the Movement",
